@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield(:title) %> | Marc Laforet</title>
+    <%= stylesheet_link_tag 'application', media: 'all',
+                                           'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+
+  </head>
+  <body>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+      <h1 class="navbar-text">Marc Laforet</h1>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to 'About',   about_path %></li>
+            <li><%= link_to 'Gallery', gallery_path %></li>
+            <li><%= link_to 'Resume', resume_path %></li>
+            <li><%= link_to 'Contact', contact_path %></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="container">
+      <%= yield %>
+    </div>
+  </body>
+</html>
